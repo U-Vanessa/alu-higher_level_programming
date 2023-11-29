@@ -1,3 +1,6 @@
+# 7-base_geometry.txt
+# run test with python3 -m doctest -v ./tests/[filename].txt
+
 First import method to test
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
@@ -14,7 +17,8 @@ Test non-implemented area method
      >>> bg.area()
      Traceback (most recent call last):
      ...
-    Exception: area() is not implemented
+     Exception: area() is not implemented
+
 Test ints less than or equal to 0:
      >>> bg = BaseGeometry()
      >>> bg.integer_validator("checkme", 0)
@@ -33,7 +37,7 @@ Test non-ints:
      >>> bg = BaseGeometry()
      >>> bg.integer_validator("checkme", None)
      Traceback (most recent call last):
-...
+     ...
      TypeError: checkme must be an integer
 
      >>> bg = BaseGeometry()
@@ -50,10 +54,17 @@ Test non-ints:
 
      >>> bg = BaseGeometry()
      >>> bg.integer_validator("checkme", [1, 2, 3])
-     Traceback (most rec
-Keny Cyusa10:08
-TypeError: checkme must be an integer
->>> bg = BaseGeometry()
+     Traceback (most recent call last):
+     ...
+     TypeError: checkme must be an integer
+
+     >>> bg = BaseGeometry()
+     >>> bg.integer_validator("checkme", (1, 2, 3))
+     Traceback (most recent call last):
+     ...
+     TypeError: checkme must be an integer
+
+     >>> bg = BaseGeometry()
      >>> bg.integer_validator("checkme", {"key": 1})
      Traceback (most recent call last):
      ...
@@ -69,7 +80,8 @@ TypeError: checkme must be an integer
      >>> bg.integer_validator("checkme", {3, 4})
      Traceback (most recent call last):
      ...
-TypeError: checkme must be an integer
+     TypeError: checkme must be an integer
+
 Test invalid number of arguments:
      >>> bg = BaseGeometry()
      >>> bg.integer_validator()
