@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""List the first state."""
+"""List the first state """
 
 
 import sqlalchemy
