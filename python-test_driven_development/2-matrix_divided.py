@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is a Matrix Divided function
+This is a Matrix  Divided function
 """
 
 
